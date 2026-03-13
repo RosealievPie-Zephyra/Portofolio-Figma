@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  font-size: 1rem;
+}
+
+body { 
+  font-size: 0.875rem; 
+  font-family: 'Comic Neue', cursive; 
+}
+
+.font-bubblegum { 
+  font-family: 'Bubblegum Sans', cursive; 
+}
+
+.font-comme { 
+  font-family: 'Comme', sans-serif; 
+}
+
+.bg-gradient-custom { 
+  background: linear-gradient(rgba(203,135,156,1), rgba(69,39,60,1)); 
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2%;
+  background-color: #1b1517;
+  border-bottom: 3px solid #cb879c;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-nav {
+  display: flex;
+  gap: 2rem;
+  margin-left: 5rem;
+  margin-right: 3rem;
+}
+
+.navbar .navbar-nav a {
+  color: #cb879c;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #6fa3d3;
+}
+
+.navbar .navbar-nav a::after {
+  content: '';
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid;
+  color:#cb879c;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #6fa3d3;
+  transform: scale(1.3);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+@keyframes wiggle-box {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+      font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+      font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+      display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+      position: absolute;
+      flex-direction: column;
+      align-items: flex-start;
+      top: 100%;
+      right: -100%;
+      background-color: #1b1517;
+      width: 30rem;
+      height: 100vh;
+      transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+      right: 0;
+  }
+
+  .navbar .navbar-nav a {
+      color: #cb879c;
+      display: block;
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+      transform-origin: 0 0;
+  }
+  
+  .navbar .navbar-nav a:hover::after {
+      transform: scaleX(0.2);
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+      font-size: 55%;
+  }
+}
